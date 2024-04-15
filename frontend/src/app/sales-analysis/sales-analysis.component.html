@@ -1,0 +1,87 @@
+<div
+  class="d-flex"
+  style="
+    height: 100vh;
+    background-image: url('/assets/bg.jpg');
+    background-size: cover;
+  "
+>
+  <div
+    style="flex: 1; z-index: 10; backdrop-filter: blur(2px); padding: 4% 8%"
+    class="d-flex flex-column justify-content-center"
+  >
+    <div
+      class="d-flex justify-content-center"
+      style="
+        flex: 1;
+        background-color: #fff;
+        opacity: 0.9;
+        border-radius: 20px;
+        padding: 2% 0%;
+      "
+    >
+      <div class="d-flex flex-column" style="flex: 1">
+        <div class="d-flex justify-content-center" style="flex: 0.1">
+          <h2 style="font-weight: bolder">
+            <a href="#" style="text-decoration: none; color: inherit">
+              Sales Analysis
+            </a>
+          </h2>
+        </div>
+        <nav
+          class="d-flex flex-row justify-content-between align-items-center"
+          style="
+            flex: 0.08;
+            background-color: rgb(232, 139, 245);
+            padding: 0% 4%;
+          "
+        >
+          <a
+            href="/sales-analysis/sales-detail"
+            style="
+              text-decoration: none;
+              color: inherit;
+              font-weight: bold;
+              padding: 1%;
+              flex: 0.33;
+            "
+            class="detail d-flex justify-content-center"
+            >Sales Detail</a
+          >
+          <a
+            href="/sales-analysis/sales-record"
+            style="
+              text-decoration: none;
+              color: inherit;
+              font-weight: bold;
+              padding: 1%;
+              flex: 0.33;
+            "
+            class="detail d-flex justify-content-center"
+            >Sales Record</a
+          >
+          <a
+            href="/sales-analysis/sales-report"
+            style="
+              text-decoration: none;
+              color: inherit;
+              font-weight: bold;
+              padding: 1%;
+              flex: 0.33;
+            "
+            class="detail d-flex justify-content-center"
+            >Sales Report</a
+          >
+        </nav>
+        <div
+          class="d-flex flex-column"
+          style="flex: 0.82; padding: 2% 4%; overflow-y: auto"
+        >
+          <div class="d-flex flex-column" style="max-height: 0">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

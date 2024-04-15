@@ -1,0 +1,36 @@
+<div class="d-flex flex-column" style="flex:1;">
+
+<div class="input-group rounded justify-content-end d-flex" style="flex: 0.1; padding-bottom: 1%;">
+  <div class="flex-row d-flex ">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="margin-right: 2%;" 
+    (input)="onSearchChange($event.target.value)"/>
+    
+    <span class="input-group-text " id="search-addon">
+      <i class="fas fa-search"></i>
+    </span>
+  </div>
+</div>
+<div class="d-flex flex-column" style="flex: 0.9;">
+    <table class="table table-hover" style="text-align: center;">
+      <thead>
+        <tr>
+          <th (click)="onSort('saleId')">Sale ID <i class="fas fa-sort" [ngClass]="{'fa-sort-up': sortBy === 'saleId' && sortDirection === 'asc', 'fa-sort-down': sortBy === 'saleId' && sortDirection === 'desc'}"></i></th>
+          <th (click)="onSort('product.name')">Product <i class="fas fa-sort" [ngClass]="{'fa-sort-up': sortBy === 'product.name' && sortDirection === 'asc', 'fa-sort-down': sortBy === 'product.name' && sortDirection === 'desc'}"></i></th>
+          <th (click)="onSort('quantity')">Quantity <i class="fas fa-sort" [ngClass]="{'fa-sort-up': sortBy === 'quantity' && sortDirection === 'asc', 'fa-sort-down': sortBy === 'quantity' && sortDirection === 'desc'}"></i></th>
+          <th (click)="onSort('saleDate')">Sale Date <i class="fas fa-sort" [ngClass]="{'fa-sort-up': sortBy === 'saleDate' && sortDirection === 'asc', 'fa-sort-down': sortBy === 'saleDate' && sortDirection === 'desc'}"></i></th>
+          <th (click)="onSort('revenue')">Revenue <i class="fas fa-sort" [ngClass]="{'fa-sort-up': sortBy === 'revenue' && sortDirection === 'asc', 'fa-sort-down': sortBy === 'revenue' && sortDirection === 'desc'}"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sale of filteredSales" (click)="onRowClick(sale)">
+          <td>{{ sale.saleId }}</td>
+          <td>{{ sale.product.name }}</td>
+          <td>{{ sale.quantity }}</td>
+          <td>{{ sale.saleDate }}</td>
+          <td>{{ sale.revenue }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+  </div>
